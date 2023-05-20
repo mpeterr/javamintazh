@@ -13,11 +13,6 @@ import java.util.List;
 public class ServletProbaterem extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = (String) request.getSession().getAttribute("email");
         Probaterem probaterem = (Probaterem) request.getServletContext().getAttribute("probaterem");
         List<Idopont> idopontok = probaterem.getIdopontok();
@@ -35,7 +30,11 @@ public class ServletProbaterem extends HttpServlet {
                 probaterem.Torol(email, i);
             }
         }
+        request.getRequestDispatcher("fooldal.jsp").forward(request, response);
+    }
 
-
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
     }
 }
