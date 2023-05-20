@@ -53,12 +53,12 @@
             </td>
             <td>
                 <%
-                    if(idopont.getFoglalas() == null){//itt jön majd a href-es gombos rész
+                    if(idopont.getFoglalas() == null){
                 %>
                 <a href="ServletProbaterem?foglal=<%=idopont.getAzonosito()%>">Foglal</a>
                 <%
                 }
-                else
+                else if(idopont.getFoglalas() == email)
                 {
                 %>
                 <a href="ServletProbaterem?torol=<%=idopont.getAzonosito()%>">Törlés</a>
@@ -70,6 +70,7 @@
             <%
         }
     %>
-</table>
+</table><br>
+<a href="nyitooldal.html">Vissza a főoldalra</a>
 </body>
 </html>
