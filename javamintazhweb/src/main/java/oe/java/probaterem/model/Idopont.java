@@ -1,10 +1,12 @@
 package oe.java.probaterem.model;
 
+import java.io.Serializable;
+
 //    három szöveges mezővel: azonosito, cimke, foglalas.
 //    A cimke mező az időpont szöveges megjelenítését fogja tartalmazni (pl. „Hetfő 18:00-20:00”).
 //    Az azonosito egyedi string értékek (pl. „1”, „2”, ...).
 //    A foglalas mező null értéke azt fogja jelenteni, hogy ez az időpont még nincs lefoglalva, egyébként a lefoglaló e-mail címe.
-public class Idopont {
+public class Idopont implements Serializable {
     private String azonosito; //pl. „1”, „2”, ...
     private String cimke; //pl. „Hetfő 18:00-20:00”
     private String foglalas; //null vagy foglaló emailje
