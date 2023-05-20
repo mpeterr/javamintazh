@@ -34,6 +34,7 @@
     <%
         for (Idopont idopont : probaterem.getIdopontok()){
             %>
+    <tr>
             <td><%=idopont.getCimke()%></td>
             <td>
                 <%
@@ -65,6 +66,7 @@
                     }
                 %>
             </td>
+    </tr>
             <%
         }
     %>
