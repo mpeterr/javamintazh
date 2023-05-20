@@ -13,6 +13,7 @@ public class UserListener implements ServletContextListener, HttpSessionListener
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         /* This method is called when the servlet context is initialized(when the Web application is deployed). */
+        sce.getServletContext().setAttribute("probaterem", new Probaterem());
     }
 
     @Override
