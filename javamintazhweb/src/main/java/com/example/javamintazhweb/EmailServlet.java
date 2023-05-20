@@ -16,6 +16,6 @@ public class EmailServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
         request.getSession().setAttribute("email", email);
-        request.getRequestDispatcher("fooldal.jsp").forward(request, response);
+        request.getRequestDispatcher("ServletProbaterem").forward(request, response);
     }
 }
