@@ -22,4 +22,13 @@ public class Probaterem {
         idopontok.add(new Idopont("4", "Csütörtök 18:00-20:00", null));
         idopontok.add(new Idopont("5", "Péntek 18:00-20:00", null));
     }
+
+    public void Foglal(String email, Idopont i){
+        idopontok.get(Integer.parseInt(i.getAzonosito())-1).setFoglalas(email);
+    }
+
+    public void Torol(String email, Idopont i){
+        idopontok.get(Integer.parseInt(i.getAzonosito())-1).setFoglalas(null);
+    }
+
 }
