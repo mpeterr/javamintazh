@@ -55,13 +55,13 @@
                 <%
                     if(idopont.getFoglalas() == null){//itt jön majd a href-es gombos rész
                 %>
-                szabad
+                <a href="ServletProbaterem?foglal=<%=idopont.getAzonosito()%>">Foglal</a>
                 <%
                 }
                 else
                 {
                 %>
-                foglalt
+                <a href="ServletProbaterem?torol=<%=idopont.getAzonosito()%>">Törlés</a>
                 <%
                     }
                 %>
