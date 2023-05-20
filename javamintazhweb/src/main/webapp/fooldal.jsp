@@ -40,13 +40,13 @@
                 <%
                     if(idopont.getFoglalas() == null){
                     %>
-                        szabad
+                        Szabad
                     <%
                     }
                     else
                     {
                     %>
-                        foglalt
+                        Foglalt
                     <%
                     }
                 %>
