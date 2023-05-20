@@ -1,3 +1,8 @@
+<%@ page import="oe.java.probaterem.model.Idopont" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.InvalidPropertiesFormatException" %>
+<%@ page import="oe.java.probaterem.model.UserListener" %>
+<%@ page import="oe.java.probaterem.model.Probaterem" %>
 <%--
   Created by IntelliJ IDEA.
   User: Péter
@@ -19,7 +24,50 @@
 <h1>Próbaterem foglalások</h1>
 <%
     String email = (String) request.getSession().getAttribute("email");
+    Probaterem probaterem = (Probaterem) request.getServletContext().getAttribute("probaterem");
 %>
-<p>Bejelentkezve mint: <%=email%></p>
+<p>Bejelentkezve mint: <%=email%></p><br>
+<table border="1">
+    <tr>
+        <td>Időpont</td><td>Állapot</td><td>Foglalás</td>
+    </tr>
+    <%
+        for (Idopont idopont : probaterem.getIdopontok()){
+            %>
+            <td><%=idopont.getCimke()%></td>
+            <td>
+                <%
+                    if(idopont.getFoglalas() == null){
+                    %>
+                        szabad
+                    <%
+                    }
+                    else
+                    {
+                    %>
+                        foglalt
+                    <%
+                    }
+                %>
+            </td>
+            <td>
+                <%
+                    if(idopont.getFoglalas() == null){//itt jön majd a href-es gombos rész
+                %>
+                szabad
+                <%
+                }
+                else
+                {
+                %>
+                foglalt
+                <%
+                    }
+                %>
+            </td>
+            <%
+        }
+    %>
+</table>
 </body>
 </html>
