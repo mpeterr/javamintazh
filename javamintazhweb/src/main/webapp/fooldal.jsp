@@ -58,7 +58,7 @@
                 <a href="ServletProbaterem?foglal=<%=idopont.getAzonosito()%>">Foglal</a>
                 <%
                 }
-                else if(idopont.getFoglalas() == email)
+                else if(idopont.getFoglalas().equals(email))
                 {
                 %>
                 <a href="ServletProbaterem?torol=<%=idopont.getAzonosito()%>">Törlés</a>
