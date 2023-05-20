@@ -11,6 +11,10 @@ import java.util.Map;
 public class Probaterem {
     private List<Idopont> idopontok = new ArrayList<>();
 
+    public List<Idopont> getIdopontok() {
+        return idopontok;
+    }
+
     public Probaterem() {
         idopontok.add(new Idopont("1", "Hétfő 18:00-20:00", null));
         idopontok.add(new Idopont("2", "Kedd 18:00-20:00", null));
