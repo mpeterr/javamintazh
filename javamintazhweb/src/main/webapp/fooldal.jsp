@@ -16,7 +16,7 @@
     <title>Fő oldal</title>
 </head>
 <body>
-<h1>Próbaterem foglalások</h1><br>
+<h1>Próbaterem foglalások</h1>
 <%
     String email = (String) request.getSession().getAttribute("email");
 %>
